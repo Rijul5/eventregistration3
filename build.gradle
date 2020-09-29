@@ -11,15 +11,17 @@ plugins {
     id 'java-library'
 }
 
+
+task stage () {
+    dependsOn ':EventRegistration-Backend:assemble'
+}
+
 repositories {
     // Use jcenter for resolving dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
 
-task stage () {
-    dependsOn ':EventRegistration-Backend:assemble'
-}
 
 dependencies {
     // This dependency is exported to consumers, that is to say found on their compile classpath.
